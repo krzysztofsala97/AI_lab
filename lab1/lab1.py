@@ -9,7 +9,7 @@ def main():
     P = np.array([[[0.108, 0.012], [0.072, 0.008]],
                  [[0.016, 0.064], [0.144, 0.576]]])
     print(P)
-
+# oś 0 - cavity, oś 1 - toothache, oś 2 - catch
     P_toothache = np.sum(P, axis=(0, 2))
     print(P_toothache)
     P_cavity = np.sum(P, axis=(1, 2))
