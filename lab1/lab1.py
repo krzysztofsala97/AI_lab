@@ -13,7 +13,6 @@ def main():
     P_toothache = np.sum(P, axis=(0, 2))
     print(P_toothache)
     P_cavity = np.sum(P, axis=(1, 2))
-<<<<<<< HEAD
     print("P(cavity) = " + str(P_cavity))
 # zadanie 4
     P_toothache_giv_cavity = np.sum(P, axis=2)/P_cavity
@@ -33,13 +32,5 @@ def main():
     rozmiar_GB = rozmiar_MB / 1024
     print("Do przechowania 32 zmiennych binarnych zapisanych jako 32 bitowy float potrzeba " + str(rozmiar_GB) + "GB")
 # zadanie 8
-=======
-    print(P_cavity)
-    print("P(Toothache) wynosi " + str(P_toothache) +" a P(cavity) jest równe " + str(P_cavity))
-
-    P_toothache_cavity = np.transpose(np.sum(P, axis=2))
-    print(P_toothache_cavity)
-
->>>>>>> parent of 8b3fc4a... Do_zadania_5
 if __name__ == '__main__':
     main()
