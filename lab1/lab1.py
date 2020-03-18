@@ -72,6 +72,29 @@ def main():
     print(P_too_cat_giv_cav)
     print(iloczyn)
     print("Zmienne toothache i catch są niezależne warunkowo")
+# Zadanie 10, 11
+# Korzystając z równań z zadania 8 wiemy że
+# 1. P(Cav|Too,Cat) = P(Too,Cat|Cav) * P(Cav) / P(Too,Cat)
+# 2. P(Cav|Too,Cat) = P(Cav,Too,Cat) / P(Too,Cat)
+# Wiedząc że pełny rozkład
+# Wiedząc że zmienne Toothache i Catch są niezależne pod warunkiem Cavity możemy zapisać
+# P(Too,Cat|Cav) = P(Too|Cav) * P(Cat|Cav)
+# Równane 1. ma wtedy postać
+# P(Cav|Too,Cat) = P(Too|Cav) * P(Cat|Cav) * P(Cav) / P(Too,Cat)
+# Korzystając ze zmodyfikowanego równania 1. oraz równania 2. uzyskujemy pełen rozkład ze wzoru
+# P(Cav,Too,Cat) = P(Too|Cav) * P(Cat|Cav) * P(Cav)
+# Mając pełny rozkład korzystamy ze wzoru na prawdopodobieństwo brzegowe i obliczamy P(Too,Cat)
+# Następnie można obliczyć P(Cav|Too,Cat) korzystając ze zmodyfikowanego równania 1 czyli
+# P(Cav|Too,Cat) = P(Too|Cav) * P(Cat|Cav) * P(Cav) / P(Too,Cat)
 
+# Zadanie 12
+# Zakładając że zmienne mają wartości binarne potrzebujemy 31 tablic dwuelementowych z prawdopodobieństwem warunkowym
+# zmiennych niezależnych warunkowo pod warunkiem zmiennej separującej(P(A1|B), P(A2|B) ... P(A31|B)) oraz tablicy
+# dwuelementowej z prawdopodobieństwem zmiennej separującej(P(B)). Pełen rozkład można uzyskać obliczając iloczyn tych
+# prawdopodobieństw. Przy obliczeniach zajętości pomięci założono że zmienne mają 32 bity jak w zadaniu 7
+    ile_zmienych = 31 * 2 + 2
+    ile_pamięci_b = ile_zmienych * 32
+    ile_pamięci_B = ile_pamięci_b / 8
+    print("Potrzeba " + str(ile_pamięci_B) + " bajtów pamięci")
 if __name__ == '__main__':
     main()
